@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "b96970e3-21b9-4a52-85c3-31de53c4a66c",
+		"name": "Expenses Track",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16303457"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john2@example.com\",\r\n  \"password\": \"secret123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/register",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"john1@example.com\",\r\n  \"password\": \"secret123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/expenses",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/expenses",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/expenses",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 23.50,\r\n    \"category\": \"drinks\",\r\n    \"date\": \"2025-08-15\",\r\n    \"description\": \"dinner\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/expenses",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/expenses/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwMDM0NCwiZXhwIjoxNzU1ODg2NzQ0fQ.QjL3uf9YFOEvH3vKUSj_WfJvXvyfen3p1ZMupItfgvU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 20.00,\r\n    \"category\": \"milk\",\r\n    \"date\": \"2025-08-20\",\r\n    \"description\": \"morning (adjusted)\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/expenses/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"expenses",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/expenses/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/expenses/4",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"expenses",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/income",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/income",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"income"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/income",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 80000.00,\r\n    \"source\": \"freelance Salary\",\r\n    \"date\": \"2025-08-20\",\r\n    \"description\": \"Monthly salary\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/income",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"income"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/income/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amount\": 1600.00,\r\n  \"source\": \"Salary\",\r\n  \"date\": \"2025-08-20\",\r\n  \"description\": \"Adjusted salary\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/income/3",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"income",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/income/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/income/5",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"income",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/investments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/investments",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"investments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/investments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"assetType\": \"STOCK\",\r\n  \"symbol\": \"AAPL\",\r\n  \"quantity\": 10,\r\n  \"avgBuyPrice\": 120.50,\r\n  \"currentPrice\": 190.00\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/investments",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"investments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/investments/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"assetType\": \"STOCK\",\r\n  \"symbol\": \"AAPLkjkhkb\",\r\n  \"quantity\": 10,\r\n  \"avgBuyPrice\": 120.50,\r\n  \"currentPrice\": 190.00\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/investments/4",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"investments",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/investments/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/investments/4",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"investments",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reports/summary",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NTgwOTQzMSwiZXhwIjoxNzU1ODk1ODMxfQ.Oh5PqFvOmHvQNKrB5xlG5tztf_vjuLoTOV8-BIV7wyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/reports/summary",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"reports",
+						"summary"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "YYYY-MM-DD",
+							"disabled": true
+						},
+						{
+							"key": "end",
+							"value": "YYYY-MM-DD",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}

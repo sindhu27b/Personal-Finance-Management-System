@@ -1,0 +1,5 @@
+body { background-color: #f8fafc; }
+.navbar-brand { font-weight: 700; letter-spacing: .3px; }
+.card { border-radius: 14px; }
+.table thead th { background-color: #f1f5f9; }
+.form-label.required::after { content: " *"; color: #dc3545; }
